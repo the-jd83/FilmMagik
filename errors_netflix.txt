@@ -1,0 +1,7 @@
+stuck at 37:00 <= problem solved it was just warning
+
+Error at 45:20<= problem with set Auth => porblem solved it was imported twice
+
+2:37:00-> there is no particular error as such, but 
+the problem is slider is moving even tho there is no movie 
+next or before.
