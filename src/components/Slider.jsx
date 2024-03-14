@@ -15,7 +15,7 @@ export default function Slider({ movies }) {
       />
       <CardSlider
         data={getMoviesFromRange(30, 40)}
-        title="Popular on Netflix"
+        title="Popular on FilmMagik"
       />
       <CardSlider data={getMoviesFromRange(40, 50)} title="Action Movies" />
       <CardSlider data={getMoviesFromRange(50, 60)} title="Epics" />
@@ -23,4 +23,25 @@ export default function Slider({ movies }) {
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  margin-bottom: 2rem;
+`;
+
+const Slider = styled.div`
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: 6;
+`;
+
+const Thumbnail = styled.div`
+  border: 2px solid red; /* Add red border to each thumbnail */
+  margin-right: 1rem;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+`;

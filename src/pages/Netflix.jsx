@@ -78,7 +78,7 @@ const Container = styled.div`
   .hero {
     position: relative;
     .background-image {
-      filter: brightness(60%);
+      filter: brightness(80%);
     }
     img {
       height: 100vh;
@@ -91,10 +91,10 @@ const Container = styled.div`
         img {
           width: 100%;
           height: 100%;
-          margin-left: 5rem;
+          margin-left: 3rem;
         }
       }
-      .buttons {
+      .buttons{
         margin: 5rem;
         gap: 2rem;
         button {
@@ -111,7 +111,8 @@ const Container = styled.div`
             opacity: 0.8;
           }
           &:nth-of-type(2) {
-            background-color: rgba(109, 109, 110, 0.7);
+            background-color: red;
+            // opacity: 1;
             color: white;
             svg {
               font-size: 1.8rem;

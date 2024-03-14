@@ -26,7 +26,7 @@ export default function Navbar({ isScrolled }) {
             {links.map(({ name, link }) => {
               return (
                 <li key={name}>
-                  <Link to={link}>{name}</Link>
+                  <h3><Link to={link}>{name}</Link></h3>
                 </li>
               );
             })}
@@ -67,8 +67,13 @@ export default function Navbar({ isScrolled }) {
 const Container = styled.div`
   .scrolled {
     background-color: black;
+    background-color: rgba(0, 0, 0, 0.6); /* Change the background color to semi-transparent */
+    backdrop-filter: blur(10px); /* Add backdrop filter for blur effect */
+    
   }
   nav {
+    /* Your existing styles */
+    transition: background-color 0.3s ease-in-out; /* Add transition for smooth color change */
     position: sticky;
     top: 0;
     height: 6.5rem;
@@ -144,7 +149,8 @@ const Container = styled.div`
         }
       }
       .show-search {
-        border: 1px solid white;
+        border: 2px solid red;
+        // border-radius:15px;
         background-color: rgba(0, 0, 0, 0.6);
         input {
           width: 100%;
