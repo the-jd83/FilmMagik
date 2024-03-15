@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import backgroundImage from "../assets/home.jpg";
 import MovieLogo from "../assets/homeTitle.webp";
-
 import { onAuthStateChanged } from "firebase/auth";
 import { firebaseAuth } from "../utils/firebase-config";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +10,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchMovies, getGenres } from "../store";
 import { FaPlay } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import Slider from "../components/Slider";
+import Slider from '../components/Slider';
+
 function Netflix() {
   const [isScrolled, setIsScrolled] = useState(false);
   const movies = useSelector((state) => state.netflix.movies);
@@ -92,11 +92,14 @@ const Container = styled.div`
           width: 100%;
           height: 100%;
           margin-left: 3rem;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 1)); /* Apply drop shadow */
+          // box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Horizontal offset, vertical offset, blur radius, and color */
         }
       }
-      .buttons{
+      .buttons {
         margin: 5rem;
         gap: 2rem;
+      
         button {
           font-size: 1.4rem;
           gap: 1rem;
@@ -106,16 +109,22 @@ const Container = styled.div`
           padding-right: 2.4rem;
           border: none;
           cursor: pointer;
-          transition: 0.2s ease-in-out;
+          transition: box-shadow 0.3s ease-in-out; /* Added transition for smooth effect */
+      
           &:hover {
-            opacity: 0.8;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* White glow for play button */
           }
+      
           &:nth-of-type(2) {
             background-color: red;
-            // opacity: 1;
             color: white;
+      
             svg {
               font-size: 1.8rem;
+            }
+      
+            &:hover {
+              box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7); /* Red glow for more info button */
             }
           }
         }
@@ -123,4 +132,5 @@ const Container = styled.div`
     }
   }
 `;
+
 export default Netflix;
